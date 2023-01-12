@@ -9,10 +9,7 @@ const NavBar = () => {
       <div className="navbar-end">
         <div>
           {/* Edit button to open modal */}
-          <label
-            htmlFor="my-modal-4"
-            className="btn btn-outline"
-          >
+          <label htmlFor="my-modal-4" className="btn btn-outline">
             Add user
           </label>
           <input type="checkbox" id="my-modal-4" className="modal-toggle" />
@@ -65,7 +62,7 @@ const NavBar = () => {
                       htmlFor="my-modal-4"
                       className="btn btn-outline btn-primary w-full"
                     >
-                      Edit
+                      Add User
                     </label>
                   </div>
                 </div>
