@@ -7,7 +7,7 @@ const NavBar = () => {
         <h1 className=" normal-case text-xl">Touch Inspo</h1>
       </div>
       <div className="navbar-end">
-        <a className="btn btn-outline">Add User</a>
+        <button className="btn btn-outline">Add User</button>
       </div>
     </div>
   );

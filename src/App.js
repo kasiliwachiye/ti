@@ -6,7 +6,7 @@ function App() {
       <NavBar />
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-10 mx-auto">
-          <div className="flex flex-wrap -m-4">
+          <div className="flex flex-wrap -m-4 justify-center">
             <div className="lg:w-96 lg:mb-0 m-4 p-4 border">
               <div className="h-full text-center">
                 <img
