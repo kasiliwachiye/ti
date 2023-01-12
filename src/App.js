@@ -48,7 +48,7 @@ function App() {
                         {/* Edit button to open modal */}
                         <label
                           htmlFor="my-modal-4"
-                          className="btn btn-outline btn-warning m-2"
+                          className="btn btn-outline m-2"
                         >
                           Edit
                         </label>
@@ -116,46 +116,6 @@ function App() {
                             </div>
                           </label>
                         </label>
-                      </div>
-                      <div>
-                        {/* The button to open modal */}
-                        <label
-                          htmlFor="my-modal"
-                          className="btn btn-outline btn-error"
-                        >
-                          Delete User
-                        </label>
-
-                        {/* Put this part before </body> tag */}
-                        <input
-                          type="checkbox"
-                          id="my-modal"
-                          className="modal-toggle"
-                        />
-                        <div className="modal">
-                          <div className="modal-box">
-                            <h3 className="font-bold text-lg text-red-600">
-                              You are about to delete this user
-                            </h3>
-                            <p className="py-4">
-                              Proceed on deleting this user?
-                            </p>
-                            <div className="modal-action">
-                              <label
-                                htmlFor="my-modal"
-                                className="btn btn-outline btn-accent"
-                              >
-                                No
-                              </label>
-                              <label
-                                htmlFor="my-modal"
-                                className="btn btn-outline btn-error"
-                              >
-                                Yes
-                              </label>
-                            </div>
-                          </div>
-                        </div>
                       </div>
                     </div>
                   </div>

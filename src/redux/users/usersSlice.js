@@ -25,14 +25,6 @@ export const usersSlice = createSlice({
     users: [],
     isLoading: false,
   },
-  reducers: {
-    addUser: (state, action) => {
-      state.users.push(action.payload);
-    },
-    removeUser: (state, action) => {
-      state.users.pop(action.payload);
-    },
-  },
   extraReducers: (builder) => {
     builder
       .addCase(getUsers.pending, (state) => {
