@@ -29,14 +29,20 @@ function App() {
                       src="https://dummyimage.com/302x302"
                     />
                     <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm">
-                      {user.name === "" ? "(Missing)" : user.name}
+                      {user.name === "" ? "(Missing Name)" : user.name}
                     </h2>
                     <p className="text-gray-500 text-sm">
-                      {user.email === "" ? "(Missing)" : user.email}
+                      {user.email === "" ? "(Missing Email)" : user.email}
                     </p>
-                    <p className="text-gray-500">{user.occupation}</p>
+                    <p className="text-gray-500">
+                      {user.occupation === ""
+                        ? "(Missing Occupation)"
+                        : user.occupation}
+                    </p>
                     <span className="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4" />
-                    <p className="leading-relaxed">{user.bio === ""? "(Missing)" : user.bio}</p>
+                    <p className="leading-relaxed">
+                      {user.bio === "" ? "(Missing Bio)" : user.bio}
+                    </p>
                     <div className="flex justify-center items-center">
                       <div>
                         {/* Edit button to open modal */}
@@ -159,7 +165,7 @@ function App() {
           </div>
         </div>
       </section>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

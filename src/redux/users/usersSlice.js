@@ -15,7 +15,7 @@ export const getUsers = createAsyncThunk("users/getUsers", async () => {
     );
     return response.data;
   } catch (error) {
-    console.error(error)
+    console.error(error);
   }
 });
 
@@ -25,17 +25,26 @@ export const usersSlice = createSlice({
     users: [],
     isLoading: false,
   },
-  extraReducers: {
-    [getUsers.pending]: (state) => {
-      state.isLoading = true;
+  reducers: {
+    addUser: (state, action) => {
+      state.users.push(action.payload);
     },
-    [getUsers.fulfilled]: (state, action) => {
-      state.users = action.payload;
-      state.isLoading = false;
+    removeUser: (state, action) => {
+      state.users.pop(action.payload);
     },
-    [getUsers.rejected]: (state) => {
-      state.isLoading = false;
-    },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(getUsers.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getUsers.fulfilled, (state, action) => {
+        state.users = action.payload;
+        state.isLoading = false;
+      })
+      .addCase(getUsers.rejected, (state) => {
+        state.isLoading = false;
+      });
   },
 });
 
