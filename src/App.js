@@ -19,6 +19,18 @@ function App() {
     dispatch(getUsers());
   }, [dispatch]);
 
+  const handleEdit = (user) => {
+    dispatch(
+      updateUser({
+        id: user._id,
+        name: name,
+        email: email,
+        occupation: occupation,
+        bio: bio,
+      })
+    );
+  }
+
   return (
     <div>
       <NavBar />
@@ -56,7 +68,7 @@ function App() {
                       <div>
                         {/* Edit button to open modal */}
                         <label
-                          htmlFor="my-modal-4"
+                          htmlFor="modal"
                           className="btn btn-outline m-2"
                           onClick={(e) =>
                             console.log(`user ${user._id} clicked`)
@@ -66,18 +78,17 @@ function App() {
                         </label>
                         <input
                           type="checkbox"
-                          id="my-modal-4"
+                          id="modal"
                           className="modal-toggle"
                         />
                         <label
-                          htmlFor="my-modal-4"
+                          htmlFor="modal"
                           className="modal cursor-pointer"
                         >
                           <label
                             className="modal-box relative flex justify-center"
-                            htmlFor=""
-                          >
-                            <div>
+                            htmlFor="modal"                      >
+                            <form>
                               <div className="form-control w-full max-w-xs">
                                 <label className="label">
                                   <span className="label-text">Name</span>
@@ -123,30 +134,19 @@ function App() {
                                   onChange={(e) => setBio(e.target.value)}
                                 ></textarea>
                                 <div className="modal-action">
-                                  <label
-                                    htmlFor="my-modal-4"
+                                  <label                                  
+                                    htmlFor="modal"
                                     className="btn btn-outline btn-primary w-full"
-                                    onClick={(e) => {
-                                      dispatch(
-                                        updateUser({
-                                          id: user._id,
-                                          name: name,
-                                          email: email,
-                                          occupation: occupation,
-                                          bio: bio,
-                                        })
-                                      );
-                                    }}
+                                    onClick={(e) => handleEdit(user)}
                                   >
-                                    Edit
+                                    Edit then Refresh Page
                                   </label>
                                 </div>
                               </div>
-                            </div>
+                            </form>
                           </label>
                         </label>
                       </div>
-                      
                     </div>
                   </div>
                 </div>
