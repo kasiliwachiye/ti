@@ -50,7 +50,7 @@ function Users() {
           <div className="form-control">
             <input
               type="text"
-              placeholder="Search"
+              placeholder="James Bond"
               className="input input-bordered text-black"
               onChange={(e) => setQuery(e.target.value)}
             />
