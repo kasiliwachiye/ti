@@ -53,7 +53,7 @@ export const usersSlice = createSlice({
         state.isLoading = false;
       })
       .addCase(updateUser.pending, (state) => {
-        state.isLoading = "pending";
+        state.isLoading = true;
       })
       .addCase(updateUser.fulfilled, (state, action) => {
         const index = state.users.findIndex(
@@ -63,6 +63,9 @@ export const usersSlice = createSlice({
           ...state[index],
           ...action.payload,
         };
+        state.isLoading = false;
+      })
+      .addCase(updateUser.rejected, (state) => {
         state.isLoading = false;
       });
   },
