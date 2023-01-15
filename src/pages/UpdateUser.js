@@ -27,10 +27,10 @@ const UpdateUser = () => {
       dispatch(
         updateUser({
           _id: id,
-          name,
-          email,
-          occupation,
-          bio,
+          name: name,
+          email: email,
+          occupation: occupation,
+          bio: bio,
         })
       );
       navigate("/");
