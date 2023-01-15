@@ -23,7 +23,7 @@ export const updateUser = createAsyncThunk(
   async (payload) => {
     try {
       const { data } = await axios.patch(
-        `https://touchinspiration-0ada.restdb.io/rest/sample/${payload.id}`,
+        `https://touchinspiration-0ada.restdb.io/rest/sample/${payload._id}`,
         payload,
         config
       );
@@ -68,4 +68,5 @@ export const usersSlice = createSlice({
   },
 });
 
+export const loadingState = (state) => state.users.isLoading;
 export default usersSlice.reducer;
