@@ -6,7 +6,7 @@ const NavBar = () => {
     <div className="navbar bg-neutral text-neutral-content">
       <div className="navbar-start">
         <NavLink to="/" className=" btn btn-ghost normal-case text-xl">
-          Touch Inspo
+          TouchInspo
         </NavLink>
       </div>
     </div>
