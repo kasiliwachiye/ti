@@ -1,17 +1,11 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const config = {
-  headers: {
-    "x-apikey": "63be7360969f06502871ad7f",
-  },
-};
-
 const usersURL = `https://us-central1-ti-reactjs-test.cloudfunctions.net/app/api/users`;
 
 export const getUsers = createAsyncThunk("users/getUsers", async () => {
   try {
-    const response = await axios.get(usersURL, config);
+    const response = await axios.get(usersURL);
     return response.data;
   } catch (error) {
     console.error(error);
@@ -25,7 +19,6 @@ export const updateUser = createAsyncThunk(
       const { data } = await axios.patch(
         `https://us-central1-ti-reactjs-test.cloudfunctions.net/app/api/user/${payload.id}`,
         payload,
-        config
       );
       return data;
     } catch (error) {
