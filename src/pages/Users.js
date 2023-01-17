@@ -71,10 +71,10 @@ function Users() {
               return (
                 <Card
                   key={user.id}
-                  name={user.name}
-                  email={user.email}
-                  occupation={user.occupation}
-                  bio={user.bio}
+                  name={user.name ? user.name : "[Missing name]"}
+                  email={user.email ? user.email : "[Missing email]"}
+                  occupation={user.occupation ? user.occupation : "[Missing occupation]"}
+                  bio={user.bio ? user.bio : "[Missing bio]"}
                   onClick={() => navigate(`/${user.id}`)}
                 />
               );

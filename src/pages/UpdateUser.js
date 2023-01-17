@@ -40,50 +40,58 @@ const UpdateUser = () => {
   return (
     <>
       <NavBar />
-      <div className="flex justify-center items-center blobs">
-        <div className="m-5">
+      <div className="flex flex-col justify-center items-center blobs">
+        <div className="flex justify-center items-center my-4">
+          <img
+            alt="user-avatar"
+            className="w-20 h-20 rounded-full border-gray-200 bg-gray-100"
+            src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541"
+          />
+
+        </div>
+        <div className="flex flex-col mb-6">
           <div className="form-control w-full max-w-xs">
             <label className="label">
-              <span className="label-text">Name</span>
+              <span className="label-text font-bold">Name</span>
             </label>
             <input
               type="text"
               placeholder="James Bond"
-              className="input input-bordered w-full max-w-xs"
+              className="input input-bordered w-96 max-w-xs input-primary"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
           </div>
           <div className="form-control w-full max-w-xs">
             <label className="label">
-              <span className="label-text">Email</span>
+              <span className="label-text font-bold">Email</span>
             </label>
             <input
               type="email"
               placeholder="jamesbond007@spymail.com"
-              className="input input-bordered w-full max-w-xs"
+              className="input input-bordered w-96 max-w-xs input-primary"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="form-control w-full max-w-xs">
             <label className="label">
-              <span className="label-text">Occupation</span>
+              <span className="label-text font-bold">Occupation</span>
             </label>
             <input
               type="text"
               placeholder="Secret service agent"
-              className="input input-bordered w-full max-w-xs"
+              className="input input-bordered w-96 max-w-xs input-primary"
               value={occupation}
               onChange={(e) => setOccupation(e.target.value)}
             />
           </div>
           <div className="form-control">
             <label className="label">
-              <span className="label-text">Bio</span>
+              <span className="label-text font-bold">Bio</span>
             </label>
             <textarea
-              className="textarea textarea-bordered h-24"
+              className="textarea textarea-primary h-24"
               placeholder="The name's Bond. James Bond."
               value={bio}
               onChange={(e) => setBio(e.target.value)}
