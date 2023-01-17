@@ -70,12 +70,12 @@ function Users() {
             {filteredUsers.map((user) => {
               return (
                 <Card
-                  key={user._id}
+                  key={user.id}
                   name={user.name}
                   email={user.email}
                   occupation={user.occupation}
                   bio={user.bio}
-                  onClick={() => navigate(`/${user._id}`)}
+                  onClick={() => navigate(`/${user.id}`)}
                 />
               );
             })}

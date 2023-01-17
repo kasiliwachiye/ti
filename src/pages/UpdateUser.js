@@ -13,7 +13,7 @@ const UpdateUser = () => {
   const navigate = useNavigate();
   const users = useSelector((state) => state.users.users);
 
-  const user = users?.find((u) => u._id === id);
+  const user = users?.find((u) => u.id === id);
 
   const [name, setName] = useState(user?.name);
   const [email, setEmail] = useState(user?.email);
@@ -26,7 +26,7 @@ const UpdateUser = () => {
     if (name && email && occupation && bio) {
       dispatch(
         updateUser({
-          _id: id,
+          id: id,
           name: name,
           email: email,
           occupation: occupation,

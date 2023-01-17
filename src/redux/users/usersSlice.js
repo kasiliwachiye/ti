@@ -7,7 +7,7 @@ const config = {
   },
 };
 
-const usersURL = `https://touchinspiration-0ada.restdb.io/rest/sample`;
+const usersURL = `https://us-central1-ti-reactjs-test.cloudfunctions.net/app/api/users`;
 
 export const getUsers = createAsyncThunk("users/getUsers", async () => {
   try {
@@ -23,7 +23,7 @@ export const updateUser = createAsyncThunk(
   async (payload) => {
     try {
       const { data } = await axios.patch(
-        `https://touchinspiration-0ada.restdb.io/rest/sample/${payload._id}`,
+        `https://us-central1-ti-reactjs-test.cloudfunctions.net/app/api/user/${payload.id}`,
         payload,
         config
       );
